@@ -104,19 +104,6 @@ Edit `.env`:
 USER_ID=your_user_id_here
 ```
 
-## Customization
-
-Update the data transformation in `src/index.ts` based on `customer_attribute_mapping.json`:
-
-```typescript
-const transformedLead = {
-  // Map your fields here
-  firstName: lead.first_name || "",
-  lastName: lead.last_name || "",
-  // ... add more fields
-};
-```
-
 ## Logs
 
 - 📥 Received lead
