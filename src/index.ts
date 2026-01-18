@@ -7,7 +7,7 @@ const app = new Hono();
 
 // Configuration
 const BEARER_TOKEN = `${process.env.BEARER_TOKEN}`;
-const CUSTOMER_API_URL = `${process.env.CUSTOMER_API_URL}`;
+const CUSTOMER_API_URL = `${process.env.API_URL}/${process.env.USER_ID}/`;
 
 // Main webhook - receives leads from Primest API
 app.post("/webhook", async (c) => {
