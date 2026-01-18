@@ -101,7 +101,10 @@ Watch your terminal - you'll see the lead being processed!
 Edit `.env`:
 
 ```env
+PORT=3000
 USER_ID=your_user_id_here
+API_URL=https://contactapi.static.fyi/lead/receive/fake
+BEARER_TOKEN=FakeCustomerToken
 ```
 
 ## Logs
