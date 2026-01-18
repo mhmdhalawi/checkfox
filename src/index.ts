@@ -23,7 +23,7 @@ app.post("/webhook", async (c) => {
           status: "rejected",
           reason: zipcodeValidation.reason,
         },
-        400
+        400,
       );
     }
 
@@ -35,14 +35,14 @@ app.post("/webhook", async (c) => {
           status: "rejected",
           reason: ownerValidation.reason,
         },
-        400
+        400,
       );
     }
 
     console.log("✅ Lead accepted");
 
     // Transform data for customer API
-    const mappedLead = mapLead(lead, zipcodeValidation.zipcode);
+    const transformedLead = mapLead(lead, zipcodeValidation.zipcode);
 
     // Send to customer API
     const response = await fetch(CUSTOMER_API_URL, {
@@ -51,7 +51,7 @@ app.post("/webhook", async (c) => {
         Authorization: `Bearer ${BEARER_TOKEN}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(mappedLead),
+      body: JSON.stringify(transformedLead),
     });
 
     if (!response.ok) {
